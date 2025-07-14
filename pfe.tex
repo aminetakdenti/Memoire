@@ -261,9 +261,9 @@ Les principales caractéristiques du trafic sont extraites de manière systémat
 % ======================================================================
 % ===== NEW CHAPTER: GENERAL INTRODUCTION ==============================
 % ======================================================================
-\chapter*{General Introduction}
+\chapter{General Introduction}
 
-\section*{Intrusion Detection Systems and Network Attacks}
+\section{Intrusion Detection Systems and Network Attacks}
 
 In the evolving landscape of cybersecurity, networks are increasingly vulnerable to a wide range of malicious activities that threaten their integrity, confidentiality, and availability. Among the most disruptive are \textbf{Denial-of-Service (DoS)} and its more severe counterpart, \textbf{Distributed Denial-of-Service (DDoS)} attacks. These assaults aim to overwhelm servers or network infrastructure by flooding them with traffic or exploiting protocol weaknesses, effectively rendering services inaccessible to legitimate users.
 
@@ -290,14 +290,14 @@ Despite their widespread use, traditional IDS face several limitations:
 As cyber threats continue to evolve in complexity and scale, the limitations of existing IDS approaches highlight the urgent need for more intelligent, autonomous, and adaptive detection methods.
 
 
-\section*{Context and Motivation}
+\section{Context and Motivation}
 In the contemporary digital era, the reliability and continuous availability of network services form the backbone of global commerce, communication, and critical infrastructure. A primary threat to this stability is the Denial-of-Service (DoS) attack, and its more potent variant, the Distributed Denial-of-Service (DDoS) attack. These malicious activities aim to render online services and network resources unavailable to legitimate users by overwhelming them with an insurmountable volume of traffic or by exploiting protocol vulnerabilities. As attackers devise increasingly sophisticated and large-scale attacks, the need for intelligent, adaptive, and robust defense mechanisms has become more critical than ever.
 
 Traditional Intrusion Detection Systems (IDS) have served as the first line of defense. However, they often rely on static, signature-based methods that, while effective against known threats, are inherently incapable of identifying novel or zero-day attacks. Anomaly-based systems, which attempt to solve this by creating a baseline of "normal" behavior, frequently suffer from high false positive rates, leading to operational friction and alert fatigue. Furthermore, conventional machine learning classifiers, though an improvement, often operate as static models that require periodic retraining and struggle to adapt in real-time to the dynamic and adversarial nature of cybersecurity threats.
 
 This clear gap in defensive capabilities motivates the exploration of more advanced paradigms. Reinforcement Learning (RL), a subfield of machine learning, offers a compelling alternative. Unlike supervised learning, RL focuses on training an autonomous agent to make optimal decisions through interaction with an environment, guided by a system of rewards and penalties. This approach is inherently adaptive, allowing the agent to learn and refine its strategies over time. The potential to create a self-improving, context-aware detection system that can respond dynamically to evolving threats provides the core motivation for this research.
 
-\section*{Problem Statement}
+\section{Problem Statement}
 The central problem addressed by this thesis is the inadequacy of traditional and static machine learning-based Intrusion Detection Systems in providing adaptive, real-time defense against modern, sophisticated DDoS attacks. These existing systems exhibit several key limitations:
 \begin{itemize}
     \item \textbf{Lack of Adaptability:} Signature-based systems cannot detect new attack vectors, while static ML models fail to adapt to evolving attack patterns without manual retraining.
@@ -306,7 +306,7 @@ The central problem addressed by this thesis is the inadequacy of traditional an
 \end{itemize}
 This research seeks to answer the following question: \textbf{Can Reinforcement Learning, specifically a Deep Q-Network (DQN) approach, be effectively adapted to the supervised classification task of DDoS detection to create a more dynamic, accurate, and autonomous system?}
 
-\section*{Objectives}
+\section{Objectives}
 To address the problem statement, this thesis sets out the following primary objectives:
 \begin{enumerate}
     \item To conduct a thorough review of Denial-of-Service attacks, traditional Intrusion Detection Systems, and the foundational principles of Reinforcement Learning to establish a strong theoretical basis.
@@ -316,7 +316,7 @@ To address the problem statement, this thesis sets out the following primary obj
     \item To compare the performance of the MLP-based and CNN-based DQN agents to determine the most effective architecture for this task.
 \end{enumerate}
 
-\section*{Overall Methodology}
+\section{Overall Methodology}
 The research will be conducted through a structured, multi-stage process:
 \begin{enumerate}
     \item \textbf{Data Preprocessing:} The CIC-DDoS2019 dataset will be acquired and subjected to a comprehensive preprocessing pipeline. This includes data cleaning, binary label transformation, feature selection using a Random Forest classifier to identify the most salient features, Min-Max normalization to scale the data, and random undersampling to create a balanced dataset for training.
@@ -325,7 +325,7 @@ The research will be conducted through a structured, multi-stage process:
     \item \textbf{Training and Evaluation:} Both models will be trained using a novel loop that blends supervised signals (the true labels) with RL principles (value estimation of future states). The trained models will be evaluated on a held-out test set to assess their detection performance and generalization capabilities.
 \end{enumerate}
 
-\section*{Thesis Structure}
+\section{Thesis Structure}
 This thesis is organized into six chapters, each building upon the last to present a complete account of the research:
 \begin{itemize}
     \item \textbf{Chapter 1: Intrusion Detection Systems (IDS)} lays the theoretical groundwork by discussing fundamental security concepts, detailing the various types of DoS/DDoS attacks, and explaining the architecture and limitations of traditional IDS.
@@ -340,7 +340,7 @@ This thesis is organized into six chapters, each building upon the last to prese
 \chapter{Intrusion Detection System (IDS)}
 
 \section{Security Fundamentals}
-\subsection*{Introduction}
+\subsection{Introduction}
 Security fundamentals refer to the essential principles, concepts, and practices that form the foundation of information security. These fundamentals encompass a wide range of technical and organizational measures aimed at protecting sensitive information and systems from unauthorized access, theft, damage, or other forms of compromise.
 
 Key security fundamentals include Confidentiality, Integrity, Availability, Authentication, Authorization, Encryption, Risk Management, Incident Response, and Disaster Recovery. Together, these principles establish the basis of a comprehensive information security program, enabling organizations to effectively safeguard their critical information assets and maintain the trust of stakeholders.\cite{ibm_security_fundamental}
@@ -693,7 +693,7 @@ The reward function is defined as:
 \[
 r_t =
 \begin{cases}
-+10 & \text{if } a_t = a_t^* \quad \text{(Correct Classification)} \\
++1 & \text{if } a_t = a_t^* \quad \text{(Correct Classification)} \\
 0   & \text{if } a_t \ne a_t^* \quad \text{(Incorrect Classification)}
 \end{cases}
 \]
@@ -1539,12 +1539,12 @@ Several key observations can be drawn from the results:
 \section{Conclusion}
 The experiments conducted in this chapter successfully evaluated the performance of our proposed RL-based detection models. The results clearly indicate that the CNN-DQN architecture is the most effective, achieving state-of-the-art detection rates on the CIC-DDoS2019 dataset for both binary and multi-class classification. The findings validate the novel approach of transforming tabular network data into a feature-image and leveraging a CNN for pattern extraction. Furthermore, the consistent, albeit smaller, gains from the DDQN algorithm underscore the importance of algorithmic stability in achieving robust performance. Overall, this empirical evaluation confirms that our DQN-powered system offers a powerful and accurate solution for modern DDoS detection.
 
-\chapter*{General Conclusion}
+\chapter{General Conclusion}
 \addcontentsline{toc}{chapter}{General Conclusion}
 
 This thesis embarked on an exploration of a novel methodology for detecting Denial-of-Service (DoS) attacks by adapting the principles of Reinforcement Learning (RL), specifically Deep Q-Networks (DQN), to a traditionally supervised classification problem. Motivated by the limitations of static, signature-based Intrusion Detection Systems (IDS), which struggle against novel and evolving threats, our work sought to develop a more dynamic, adaptive, and intelligent detection framework. By reframing network traffic classification as a sequential decision-making process, we successfully designed, implemented, and evaluated a system capable of achieving exceptional detection accuracy.
 
-\section*{Summary of Contributions}
+\section{Summary of Contributions}
 The primary contributions of this research are multifaceted and can be summarized as follows:
 \begin{enumerate}
     \item \textbf{A Novel Methodological Bridge:} We successfully developed a framework that bridges the gap between Reinforcement Learning and supervised classification for the cybersecurity domain. By simulating an RL environment from a static dataset and engineering a hybrid reward and target mechanism, we demonstrated how a DQN agent can be effectively trained to perform a classification task.
@@ -1553,7 +1553,7 @@ The primary contributions of this research are multifaceted and can be summarize
     \item \textbf{Comparative Analysis:} Through a detailed comparison, we empirically proved the superiority of the CNN-based architecture for this task and quantified the stability improvements gained by using a Double DQN (DDQN) algorithm over the standard DQN.
 \end{enumerate}
 
-\section*{Study Limitations}
+\section{Study Limitations}
 While the results are highly promising, it is important to acknowledge the limitations of this study, which also pave the way for future work:
 \begin{itemize}
     \item \textbf{Static Environment:} The RL agent was trained and evaluated on a static, pre-collected dataset. This means the agent could not learn from the true, real-time consequences of its actions (e.g., how blocking traffic might alter an attacker's strategy). The full adaptive potential of RL is best realized in a live, dynamic environment.
@@ -1562,7 +1562,7 @@ While the results are highly promising, it is important to acknowledge the limit
     \item \textbf{Computational Overhead:} Training deep reinforcement learning models is computationally more intensive and time-consuming compared to traditional machine learning algorithms like Decision Trees or SVMs, which could be a consideration for resource-constrained environments.
 \end{itemize}
 
-\section*{Future Research Directions}
+\section{Future Research Directions}
 This research opens up several exciting avenues for future investigation:
 \begin{itemize}
     \item \textbf{Online and Interactive Learning:} The most critical next step is to deploy the RL agent in a live or highly realistic simulated network environment. This would enable online learning, where the agent can continuously adapt its policies based on real-time feedback and the evolving nature of network traffic.

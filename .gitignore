@@ -65,3 +65,4 @@ pdflatex47601.fls
 *.fdb_latexmk
 *.fts
 *.log
+*.flx
